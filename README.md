@@ -1,6 +1,6 @@
 # grunt-anybar
 
-> Plugin to show the current build status of Grunt in the AnyBar menu bar.
+> Plugin to show the current build status of Grunt in the [AnyBar](https://github.com/tonsky/AnyBar) menu bar.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -25,59 +25,92 @@ In your project's Gruntfile, add a section named `anybar` to the data object pas
 ```js
 grunt.initConfig({
   anybar: {
-    options: {
-      // Task-specific options go here.
+    start: {
+      options: {
+        // Task-specific options go here.
+      }
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
+    finish: {
+      options: {
+        // Task-specific options go here.
+      }
+    }
   },
 });
 ```
 
+Last but not least, run the specific `start` and the `finish` task at the first and at the end of your `grunt.registerTask()` invocation:
+
+```js
+grunt.registerTask('default', [ 'anybar:start', 'copy', 'sass:build', 'autoprefixer', 'concat', 'uglify', 'imagemin', 'jscs', 'phplint', 'anybar:finish' ]);
+grunt.registerTask('dev', [ 'anybar:start', 'copy', 'connect', 'watch', 'anybar:finish' ]);
+```
+
 ### Options
 
-#### options.separator
+#### options.port
+Type: `Integer`
+Default value: `1738`
+
+An integer value that represents the AnyBar UDP port.
+
+#### options.status
 Type: `String`
-Default value: `',  '`
 
-A string value that is used to do something with whatever.
+One of AnyBar's status or color values:
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
-
+* `white`
+* `red`
+* `orange`
+* `yellow`
+* `green`
+* `cyan`
+* `blue`
+* `purple`
+* `black`
+* `question`
+* `exclamation`
+ 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+In the example below, with default options, the plugin uses the default UDP port 1738 to talk to AnyBar.
 
 ```js
 grunt.initConfig({
   anybar: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+    start: {
+      options: {
+        status: 'yellow'
+      }
     },
+    finish: {
+      options: {
+        status: 'green'
+      }
+    }
   },
 });
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+In case you use a different port you can pass the `port` option:
 
 ```js
 grunt.initConfig({
   anybar: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
+    start: {
+      options: {
+        status: 'yellow',
+        port: 1739
+      }
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    finish: {
+      options: {
+        status: 'green',
+        port: 1739
+      }
+    }
   },
 });
 ```
