@@ -1,0 +1,42 @@
+{
+  "name": "grunt-anybar",
+  "description": "Plugin to show the current build status of Grunt in the AnyBar menu bar.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/frdmn/grunt-anybar",
+  "author": {
+    "name": "Jonas Friedmann",
+    "email": "j@frd.mn",
+    "url": "http://frd.mn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/frdmn/grunt-anybar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/frdmn/grunt-anybar/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/frdmn/grunt-anybar/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
