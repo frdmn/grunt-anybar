@@ -1,6 +1,6 @@
 {
   "name": "grunt-anybar",
-  "description": "Plugin to show the current build status of Grunt in the AnyBar menu bar.",
+  "description": "Grunt plugin to show the current build status in the AnyBar menu app.",
   "version": "0.1.0",
   "homepage": "https://github.com/frdmn/grunt-anybar",
   "author": {

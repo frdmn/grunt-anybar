@@ -1,6 +1,6 @@
 # grunt-anybar
 
-> Plugin to show the current build status of Grunt in the [AnyBar](https://github.com/tonsky/AnyBar) menu bar.
+> Grunt plugin to show the current build status in the [AnyBar](https://github.com/tonsky/AnyBar) menu app.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
