@@ -27,7 +27,7 @@ exports.anybar = {
     // setup here if necessary
     done();
   },
-  default_options: function(test) {
+  start: function(test) {
     test.expect(1);
 
     // var actual = grunt.file.read('tmp/default_options');
@@ -38,7 +38,7 @@ exports.anybar = {
 
     test.done();
   },
-  custom_options: function(test) {
+  finish: function(test) {
     // test.expect(1);
 
     // var actual = grunt.file.read('tmp/custom_options');

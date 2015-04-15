@@ -30,14 +30,13 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     anybar: {
-      default_options: {
+      start: {
         options: {
-          status: 'green'
+          status: 'yellow'
         }
       },
-      custom_options: {
+      finish: {
         options: {
-          port: 1736,
           status: 'green'
         }
       }
