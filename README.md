@@ -120,6 +120,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
-v0.2.0
+v0.2.1
 
   * Fixed error hooks. So it works now.
